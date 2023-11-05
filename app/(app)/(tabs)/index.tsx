@@ -1,9 +1,10 @@
 
-import EditScreenInfo from '../../components/EditScreenInfo';
+import EditScreenInfo from '../../../components/EditScreenInfo';
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { SafeAreaView, StyleSheet, Text, TextInput, View, Button } from 'react-native';
-import { update } from '../../reducers/userReducer';
+import { update } from '../../../reducers/userReducer';
+import { RootState } from '../../../state/store';
 
 export default function TabOneScreen() {
   return (
@@ -17,8 +18,7 @@ export default function TabOneScreen() {
 const ProfileScreen = ({ }) => {
   const dispatch = useDispatch();
 
-  const user = useSelector(state => state.user);
-  console.log(user)
+  const user = useSelector((state: RootState) => state.user);
   const [newUsername, setNewUsername] = useState('');
 
   const saveUsername = () => {
