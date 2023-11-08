@@ -1,4 +1,3 @@
-import { applyMiddleware } from 'redux';
 import { configureStore } from '@reduxjs/toolkit'
 
 import thunk from 'redux-thunk';
@@ -24,5 +23,5 @@ const store = configureStore({
 })
 const persistor = persistStore(store);
 
-type RootState = ReturnType<typeof store.getState>
+type RootState = ReturnType<typeof reducers>
 export { store, persistor, RootState };
