@@ -44,10 +44,18 @@ export default function TabLayout() {
         }}
       />
       <Tabs.Screen
-        name="two"
+        name="UserContent"
         options={{
+          headerShown: false,
           title: 'Tab Two',
           tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
+        }}
+      />
+      <Tabs.Screen
+        // Name of the dynamic route.
+        name="[MessageID]"
+        options={{
+          headerShown: false,
         }}
       />
     </Tabs>
